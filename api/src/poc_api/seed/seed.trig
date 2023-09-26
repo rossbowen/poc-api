@@ -1,0 +1,105 @@
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ons: <https://data.ons.gov.uk/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.ons.gov.uk/datasets/cpih/record> {
+    
+    <https://data.ons.gov.uk/datasets/cpih/record> a dcat:CatalogRecord ;
+        dcterms:issued "2023-06-21T07:00:00+00:00"^^xsd:dateTime ;
+        foaf:primaryTopic <https://data.ons.gov.uk/datasets/cpih> ;
+        .
+
+    <https://data.ons.gov.uk/datasets/cpih> a dcat:DatasetSeries ;
+        dcterms:accrualPeriodicity <http://purl.org/cld/freq/monthly> ;
+        dcterms:creator <https://www.gov.uk/government/organisations/office-for-national-statistics> ;
+        dcterms:abstract "The Consumer Prices Index including owner occupiers' housing costs (CPIH) is a measure of inflation which includes the costs associated with owning, maintaining and living in one's own home."@en ;
+        dcterms:description "The Consumer Prices Index including owner occupiers' housing costs (CPIH) is a measure of inflation which includes the costs associated with owning, maintaining and living in one's own home. The CPIH is the most comprehensive measure of inflation."@en ;
+        dcterms:identifier "cpih" ;
+        dcterms:created "2023-06-21T07:00:00+00:00"^^xsd:dateTime ;
+        dcterms:issued "2023-06-21T07:00:00+00:00"^^xsd:dateTime ;
+        dcterms:modified "2023-08-21T07:00:00+00:00"^^xsd:dateTime ;
+        dcterms:license <http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/> ;
+        dcterms:publisher <https://www.gov.uk/government/organisations/office-for-national-statistics> ;
+        dcterms:spatial <http://statistics.data.gov.uk/id/statistical-geography/K02000001> ;
+        ons:spatialResolution <http://statistics.data.gov.uk/def/geography/collection/K02> ;
+        dcterms:temporal [ 
+            dcat:startDate "1989-01-01T00:00:00+00:00"^^xsd:dateTime ;
+            dcat:endDate "2023-08-01T00:00:00+00:00"^^xsd:dateTime ;
+        ] ;
+        dcterms:temporalResolution "P1M"^^xsd:duration ;
+        dcterms:title "Consumer Price Inflation including owner occupiers' housing costs (CPIH)"@en ;
+        dcat:contactPoint [ 
+            vcard:fn "Consumer Price Inflation Enquiries"@en ;
+            vcard:hasEmail <mailto:cpih@ons.gov.uk> ;
+        ] ;
+        dcat:keyword "consumer price index"@en,
+            "consumer price index including owner occupiers' housing costs"@en,
+            "consumer price inflation"@en,
+            "cpi"@en,
+            "cpih"@en,
+            "inflation"@en ;
+        dcat:theme <https://data.ons.gov.uk/theme/economy>,
+            <https://data.ons.gov.uk/theme/prices> ;
+        ons:nextRelease "2023-09-20T07:00:00+00:00"^^xsd:dateTime ;
+        dcat:first <https://data.ons.gov.uk/datasets/cpih/edition/2023-06> ;
+        dcat:last <https://data.ons.gov.uk/datasets/cpih/edition/2023-08> ;
+        .
+
+}
+
+<https://data.ons.gov.uk/datasets/cpih/editions/2023-06/record> {
+
+    <https://data.ons.gov.uk/datasets/cpih/editions/2023-06> a dcat:Dataset ;
+        dcterms:identifier "2023-06" ;
+        dcat:inSeries <https://data.ons.gov.uk/datasets/cpih> ;
+        dcterms:title "Consumer Price Inflation including owner occupiers' housing costs (CPIH) - June 2023"@en ;
+        dcterms:abstract "The Consumer Prices Index including owner occupiers' housing costs (CPIH) is a measure of inflation which includes the costs associated with owning, maintaining and living in one's own home."@en ;
+        dcterms:description "The Consumer Prices Index including owner occupiers' housing costs (CPIH) is a measure of inflation which includes the costs associated with owning, maintaining and living in one's own home. The CPIH is the most comprehensive measure of inflation."@en ;
+        dcterms:issued "2023-06-21T07:00:00+00:00"^^xsd:dateTime ;
+        dcterms:modified "2023-06-21T07:00:00+00:00"^^xsd:dateTime ;
+        dcterms:license <http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/> ;
+        dcterms:temporal [ 
+            dcat:startDate "1989-01-01T00:00:00+00:00"^^xsd:dateTime ;
+            dcat:endDate "2023-07-01T00:00:00+00:00"^^xsd:dateTime ;
+        ] ;
+        dcat:distribution <https://data.ons.gov.uk/datasets/cpih/editions/2023-06.csv> ;
+        .
+    
+    <https://data.ons.gov.uk/datasets/cpih/editions/2023-06.csv> a dcat:Distribution, csvw:Table ;
+        dcterms:license <http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/> ;
+        dcterms:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
+        dcterms:issued "2023-06-21T07:00:00+00:00"^^xsd:dateTime ;
+        dcterms:modified "2023-06-21T07:00:00+00:00"^^xsd:dateTime ;
+        dcat:downloadURL <https://data.ons.gov.uk/datasets/cpih/editions/2023-06.csv> ;
+        dcat:byteSize 123456789 ;
+        csvw:url <https://data.ons.gov.uk/datasets/cpih/editions/2023-06.csv> ;
+        csvw:tableSchema [ 
+            csvw:column ( 
+                [ csvw:name "column_1" ;
+                  csvw:title "column_1" ;
+                  csvw:datatype xsd:string ;
+                  rdfs:label "Column 1"@en ;
+                  rdfs:comment "This is a description of column 1"@en ;
+                ]
+                [
+                    csvw:name "column_2" ;
+                    csvw:title "column_2" ;
+                    csvw:datatype xsd:string ;
+                    rdfs:label "Column 2"@en ;
+                    rdfs:comment "This is a description of column 2"@en ;
+                ]
+                [
+                    csvw:name "column_3" ;
+                    csvw:title "column_3" ;
+                    csvw:datatype xsd:string ;
+                    rdfs:label "Column 3"@en ;
+                    rdfs:comment "This is a description of column 3"@en ;
+                ]
+            )] ;
+        .
+}

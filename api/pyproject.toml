@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "poc-api"
+version = "0.1.0"
+description = ""
+authors = ["rossbowen <ross.bowen@ons.gov.uk>"]
+readme = "README.md"
+packages = [{include = "poc_api", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.101.1"
+sparqlwrapper = "^2.0.0"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+requests = "^2.31.0"
+pyld = "^2.0.3"
+google-cloud-storage = "^2.10.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.25.1"
+pytest = "^7.4.2"
+httpx = "^0.25.0"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
